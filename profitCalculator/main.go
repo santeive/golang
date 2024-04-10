@@ -29,4 +29,7 @@ func main() {
 	fmt.Println("EBT: ", ebt)
 	fmt.Println("profit: ", profit)
 	fmt.Println("ratio: ", ratio)
+
+	// Create a module
+	// go mod init example.com/basics-practice
 }
