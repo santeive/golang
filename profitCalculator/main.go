@@ -7,8 +7,8 @@ func main() {
 	var revenue float64
 	var expenses float64
 	var taxRate float64
-	//- Ask for revenue, expenses & tax rate
 
+	//- Ask for revenue, expenses & tax rate
 	fmt.Print("Revenue: ")
 	fmt.Scan(&revenue)
 
