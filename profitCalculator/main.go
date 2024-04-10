@@ -4,8 +4,8 @@ import "fmt"
 
 func main() {
 	//** Build a profit calculator **
-	var revenue int
-	var expenses int
+	var revenue float64
+	var expenses float64
 	var taxRate float64
 
 	//- Ask for revenue, expenses & tax rate
