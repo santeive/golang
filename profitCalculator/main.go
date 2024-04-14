@@ -23,35 +23,36 @@ func alternativeReturnTwoValues() (aVar int, bVar int) {
 	return
 }
 
-func main() {
-	//** Build a profit calculator **
-	var revenue float64
-	var expenses float64
-	var taxRate float64
-
+func getUserInput(infoText string) float64 {
 	//- Ask for revenue, expenses & tax rate
-	outputText("Revenue: ")
-	fmt.Scan(&revenue)
+	var userInput float64
+	fmt.Print(infoText)
+	fmt.Scan(&userInput)
+	return userInput
+}
 
-	outputText("Expenses: ")
-	fmt.Scan(&expenses)
-
-	outputText("taxRate: ")
-	fmt.Scan(&taxRate)
-
+func calculateFinancials(revenue, expenses, taxRate float64) (float64, float64, float64) {
 	//- Calculate earnings before tax (EBT) and earnings after tax (profit)
 	ebt := revenue - expenses
 	profit := ebt * (1 - taxRate)
-
-	//- Calculate ratio (EBT/profit)
 	ratio := ebt / profit
 
-	//- Output EBT, profit and the ratio
-	fmt.Println("EBT: ", ebt)
-	fmt.Println("profit: ", profit)
-	fmt.Println("ratio: ", ratio)
+	return ebt, profit, ratio
+}
 
-	fmt.Print(alternativeReturnTwoValues())
+func main() {
+	//** Build a profit calculator **
+	revenue := getUserInput("Revenue: ")
+	expenses := getUserInput("expenses: ")
+	taxRate := getUserInput("taxRate: ")
+
+	ebt, profit, ratio := calculateFinancials(revenue, expenses, taxRate)
+
+	//- Output EBT, profit and the ratio
+	fmt.Printf("EBT: %.1f\n", ebt)
+	fmt.Printf("profit: %.1f\n", profit)
+	fmt.Printf("ratio: %.1f\n", ratio)
+	fmt.Println(alternativeReturnTwoValues())
 
 	// Create a module
 	// go mod init example.com/basics-practice
