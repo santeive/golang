@@ -21,6 +21,7 @@ package main
 
 *
 */
+
 func main() {
 	// Same ways of defining a string variable
 	//var card string = "Ace of Spades"
